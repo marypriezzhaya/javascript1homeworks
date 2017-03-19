@@ -115,7 +115,7 @@ switch ( a ) {
   alert ( "15" );
 }
 
-/* Task 5 */
+/*  Task 5  */
 
   function addition ( a, b ) {
     var result = a + b;
@@ -137,7 +137,7 @@ switch ( a ) {
     return result;
   }
 
-  /* Task 6 */
+/*  Task 6  */
   function mathOperation ( a, b, operation ) {
     var res;
   switch ( operation ) {
@@ -158,3 +158,19 @@ switch ( a ) {
     }
 var weGotIt = mathOperation ( 3, 2, 'add' );
 alert ( weGotIt );
+
+/*  Task 7  */
+alert (null == 0); //false
+/* 0 - это число, значение, с которым можно производить вычисления,
+null- это нет значения, пустое множество, и ничего с ним не сделаешь, потому что его не существует */
+
+/*  Task 8  */
+function power(val, pow) {
+  if (pow != 1) {
+    var result =  val * power(val, pow - 1);
+  }
+  else {
+    result = val;
+  }
+    return result;
+}
