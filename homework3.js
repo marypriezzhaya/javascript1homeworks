@@ -6,7 +6,7 @@ while ( i <= 100 ) {
     if ( n > 1 && n < i && i % n == 0 ) {
       break;
     }
-    if ( n > 1 && n < i && i % n != 0 ) {
+    else if ( n > 1 && n < i && i % n != 0 ) {
       continue;
     }
     if ( n == i ) {
@@ -17,3 +17,23 @@ while ( i <= 100 ) {
 }
 
 /* Task 2 */
+
+var i = 0;
+do {
+  if ( i == 0 ) {
+    console.log ( i + " - это ноль" );
+  }
+  else if ( i % 2 != 0) {
+    console.log ( i + " - это нечетное число" );
+  }
+  else {
+    console.log ( i + " - это четное число" );
+  }
+  i++
+} while ( i <= 10 );
+
+/* Task 3 */
+
+for ( var i = 0; i <= 9; i++ ) {
+
+}
