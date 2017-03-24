@@ -1,4 +1,4 @@
-/* Task 1 */
+/*  Task 1  */
 
 var i = 1;
 while ( i <= 100 ) {
@@ -16,7 +16,7 @@ while ( i <= 100 ) {
   i++;
 }
 
-/* Task 2 */
+/*  Task 2  */
 
 var i = 0;
 do {
@@ -32,8 +32,16 @@ do {
   i++
 } while ( i <= 10 );
 
-/* Task 3 */
+/*  Task 3  */
 
-for ( var i = 0; i <= 9; i++ ) {
+for ( var i = 0; i < 9; console.log( i++ )  ) {
+// emptiness
+}
 
+/*  Task 4  */
+
+var row = 'x';
+for ( i = 1; i <= 20; i++ ){
+  row = row + 'x';
+  console.log ( row );
 }
