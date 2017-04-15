@@ -56,42 +56,42 @@
     var item = event.target.parentNode;
     var name = item.getElementsByTagName('h3')[0].innerHTML;
     var price = parseInt(item.getElementsByClassName('price')[0].innerHTML);
-  // добавляем в корзину
-  var cartList = document.getElementById('cart_list');
-  // проверка, есть ли такой товар
-  if (cartContents.indexOf(name) == -1) {
-  cartContents.push(name);
-  var itemRow = document.createElement('tr');
-  var nameTd = document.createElement('td');
-  nameTd.classList.add('cart_name');
-  nameTd.innerHTML = name;
-  var priceTd = document.createElement('td');
-  priceTd.classList.add('cart_price');
-  priceTd.innerHTML = price;
-  var quantityTd = document.createElement('td');
-  quantityTd.classList.add('cart_quantity');
-  quantityTd.innerHTML = 1;
-  itemRow.appendChild(nameTd);
-  itemRow.appendChild(priceTd);
-  itemRow.appendChild(quantityTd);
-  cartList.appendChild(itemRow);
-  summ = summ + price; // добавляем к общей стоимости
-  }
-  else {
-var cartName = cartList.getElementsByClassName('cart_name');
-for (var i = 0; i < cartName.length; i++) {
-  if (cartName[i].innerHTML == name) {
-    var itemRow = cartName[i].parentNode;
-    var quantity = parseInt(itemRow.getElementsByClassName('cart_quantity')[0].innerHTML);
-    console.log(quantity);
-    itemRow.getElementsByClassName('cart_quantity')[0].innerHTML = ++quantity;
-    summ = summ + price;
-  }
-}
+    // добавляем в корзину
+    var cartList = document.getElementById('cart_list');
+    // проверка, есть ли такой товар
+    if (cartContents.indexOf(name) == -1) {
+      cartContents.push(name);
+      var itemRow = document.createElement('tr');
+      var nameTd = document.createElement('td');
+      nameTd.classList.add('cart_name');
+      nameTd.innerHTML = name;
+      var priceTd = document.createElement('td');
+      priceTd.classList.add('cart_price');
+      priceTd.innerHTML = price;
+      var quantityTd = document.createElement('td');
+      quantityTd.classList.add('cart_quantity');
+      quantityTd.innerHTML = 1;
+      itemRow.appendChild(nameTd);
+      itemRow.appendChild(priceTd);
+      itemRow.appendChild(quantityTd);
+      cartList.appendChild(itemRow);
+      summ = summ + price; // добавляем к общей стоимости
+      }
+    else {
+      var cartName = cartList.getElementsByClassName('cart_name');
+      for (var i = 0; i < cartName.length; i++) {
+        if (cartName[i].innerHTML == name) {
+          var itemRow = cartName[i].parentNode;
+          var quantity = parseInt(itemRow.getElementsByClassName('cart_quantity')[0].innerHTML);
+          console.log(quantity);
+          itemRow.getElementsByClassName('cart_quantity')[0].innerHTML = ++quantity;
+          summ = summ + price;
+          }
+        }
     }
-var all = document.getElementById('summ')
+    var all = document.getElementById('summ')
 
-all.innerHTML = summ;
+    all.innerHTML = summ;
   }
 
   </script>
