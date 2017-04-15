@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body {
+  background-color: black;
+  margin: 20px;
+}
+#snake-field {
+  background-color: black;
+
+}
+
+
+#snake-start, #snake-renew {
+  width: 125px;
+  padding: 15px;
+  color: white;
+  background: green;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+#score {
+  margin: 0 20px;
+padding: 10px;
+  color: #0F0;
+  background-color: #000;
+  border: 2px dashed;
+  width: 200px;
+  font-size: 40px;
+}
+#score::before {
+  content: 'счет:';
+  padding: 10px;
+  color: #0F0;
+  font-size: 20px;
+}
+.game-table {
+  border-collapse: collapse;
+  border: 2px solid white;
+}
+
+td.game-table-cell {
+  width: 15px;
+  height: 15px;
+  border: 1px dotted #eee;
+  border-collapse: collapse;
+}
+
+.snake-unit {
+  background: yellow;
+}
+
+.food-unit {
+  background: red;
+}
+.rock-unit {
+  background: white;
+}

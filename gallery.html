@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="homework6.css">
+  <title>Галерея</title>
+</head>
+<body>
+  <h1>Фотогалерея</h1>
+  <div class="container">
+  <div id="prev">Назад</div>
+  <div id="fullsize"></div>
+  <div id ="next">Вперед</div>
+  </div>
+  <div id="gallery">
+    <img src="gallery/IMG_5106.jpg" alt="">
+    <img src="gallery/IMG_6971.jpg" alt="">
+    <img src="gallery/IMG_71252.jpg" alt="">
+  </div>
+
+<script>
+  var fullSize = document.getElementById('fullsize');
+  window.onload = function() {
+    var gallery = document.getElementById('gallery');
+    gallery.addEventListener('click', viewPicture);
+    var prev = document.getElementById('prev');
+    prev.addEventListener('click', prevPicture);
+    var next = document.getElementById('next');
+    next.addEventListener('click', nextPicture);
+  }
+
+  function viewPicture(event) {
+    fullSize.innerHTML = '';
+    var image = event.target;
+    var bigImage = new Image();
+    bigImage.src = image.src;
+    bigImage.onload = function(){
+    fullSize.appendChild(bigImage);
+    }
+    bigImage.onerror = function() {
+    alert ('Простите, картинка пропала')
+  }
+  }
+  function prevPicture (event) {
+    var currentImage = fullSize.getElementsByTagName('img');
+    
+  }
+
+</script>
+
+</body>
+</html>

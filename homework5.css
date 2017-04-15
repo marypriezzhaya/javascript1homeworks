@@ -1,0 +1,37 @@
+#board {
+  width:850px;
+  height:850px;
+  background-color: #FFFEEF;
+  border: 2px solid #F1F0E1;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.letter {
+  width:100px;
+  height:50px;
+  color: #201000;
+  text-align: center;
+  line-height: 50px;
+}
+.number {
+  width:50px;
+  height: 100px;
+  color: #201000;
+  text-align: center;
+  line-height: 100px;
+}
+.corner {
+  width:50px;
+  height:50px;
+}
+.whiteCell {
+  width:100px;
+  height:100px;
+}
+.blackCell {
+  width:100px;
+  height:100px;
+  background-color: #201000;
+}

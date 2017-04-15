@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="homework6.css">
+
+  <title>Здание 6-2</title>
+</head>
+<body>
+  <div class="all">
+    <div class="catalogue">
+      <h1>Каталог</h1>
+      <div class="item">
+        <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/17545492_694495600712490_7643458606729502520_o.jpg?oh=ab533cb777bbb7151adce7875e55f192&oe=598A8B47" alt="Черепушка">
+        <h3>Часы "Механика мысли"</h3>
+        <div class="price">2500</div>
+        <div class="buyButton">Купить</div>
+      </div>
+      <div class="item">
+        <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/17880614_701223403373043_3430781027512668395_o.jpg?oh=ce6e77ea2657cc2b386eebb9230ede69&oe=59880020" alt="Кельтский крест">
+        <h3>Часы "Кельтский крест"</h3>
+        <div class="price">2500</div>
+        <div class="buyButton">Купить</div>
+      </div>
+      <div class="item">
+        <img src="https://scontent-frt3-1.xx.fbcdn.net/v/t31.0-8/16462945_668111090017608_4921746859851335228_o.jpg?oh=08ead38f64dac82ee706475de19ba718&oe=598A7C2B" alt="Ремень">
+        <h3>Ремень "Блуд, мед, хоровод"</h3>
+        <div class="price">1200</div>
+        <div class="buyButton">Купить</div>
+      </div>
+    </div>
+    <div class="cart">
+      <h2>Корзина:</h2>
+      <table id="cart_list">
+        <tr>
+          <td>Наименование</td>
+          <td>Цена</td>
+          <td>Кол-во</td>
+        </tr>
+      </table>
+      <div id="summ">0</div>
+    </div>
+  </div>
+
+  <script>
+  window.onload = function() {
+    var buy = document.getElementsByClassName('buyButton');
+    for (var i = 0; i < buy.length; i++) {
+      buy[i].addEventListener('click', addToCart);
+    }
+  }
+  var cartContents = [];
+  var summ = 0;
+  function addToCart(event) {
+    // получаем данные о товаре
+    var item = event.target.parentNode;
+    var name = item.getElementsByTagName('h3')[0].innerHTML;
+    var price = parseInt(item.getElementsByClassName('price')[0].innerHTML);
+  // добавляем в корзину
+  var cartList = document.getElementById('cart_list');
+  // проверка, есть ли такой товар
+  if (cartContents.indexOf(name) == -1) {
+  cartContents.push(name);
+  var itemRow = document.createElement('tr');
+  var nameTd = document.createElement('td');
+  nameTd.classList.add('cart_name');
+  nameTd.innerHTML = name;
+  var priceTd = document.createElement('td');
+  priceTd.classList.add('cart_price');
+  priceTd.innerHTML = price;
+  var quantityTd = document.createElement('td');
+  quantityTd.classList.add('cart_quantity');
+  quantityTd.innerHTML = 1;
+  itemRow.appendChild(nameTd);
+  itemRow.appendChild(priceTd);
+  itemRow.appendChild(quantityTd);
+  cartList.appendChild(itemRow);
+  summ = summ + price; // добавляем к общей стоимости
+  }
+  else {
+var cartName = cartList.getElementsByClassName('cart_name');
+for (var i = 0; i < cartName.length; i++) {
+  if (cartName[i].innerHTML == name) {
+    var itemRow = cartName[i].parentNode;
+    var quantity = parseInt(itemRow.getElementsByClassName('cart_quantity')[0].innerHTML);
+    console.log(quantity);
+    itemRow.getElementsByClassName('cart_quantity')[0].innerHTML = ++quantity;
+    summ = summ + price;
+  }
+}
+    }
+var all = document.getElementById('summ')
+
+all.innerHTML = summ;
+  }
+
+  </script>
+
+</body>
+</html>
